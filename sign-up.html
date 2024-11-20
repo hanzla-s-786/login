@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .sign-up-box {
+            padding: 25px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px; /* Add gap between label and input */
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px; /* Add gap between input fields */
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #ff6600;
+            outline: none;
+        }
+
+        .input-group-inline {
+            display: flex;
+            gap: 15px; /* Add gap between first name and last name fields */
+            margin-bottom: 20px;
+        }
+
+        .input-group-inline input {
+            width: 100%;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #888;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center; /* Align checkbox and text vertically */
+            gap: 10px; /* Add gap between checkbox and label */
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group input {
+            margin: 0; /* Remove extra margins from checkbox */
+            width: 16px;
+            height: 16px;
+        }
+
+        .sign-up-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .sign-up-btn:hover {
+            background-color: #e65c00;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .terms a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        .already-account {
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .already-account a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .already-account a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+
+        </div>
+        <div class="sign-up-box">
+            <h2>Create an Account</h2>
+            <form action="#" method="POST">
+                <div class="input-group-inline">
+                    <div>
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    <p class="hint">Your username must contain only letters (a-z) and numbers (0-9).</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <span class="toggle-password" onclick="togglePassword()">🙈</span>
+                    </div>
+                    <p class="hint">Your password must contain at least 8 characters.</p>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Receive our newsletter & marketing communication</label>
+                </div>
+
+                <button type="submit" class="sign-up-btn">Sign Up</button>
+            </form>
+
+            <p class="terms">
+                By creating an account, you agree with our <a href="#">Terms of Service</a>.
+            </p>
+            <div class="already-account">
+                <p>Already have an account? <a href="index.html">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.querySelector(".toggle-password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.textContent = "👁️"; // Change icon to open eye
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.textContent = "🙈"; // Change icon to eye-slash
+            }
+        }
+    </script>
+</body>
+</html>
